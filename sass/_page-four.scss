@@ -1,0 +1,213 @@
+.contact_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  border-bottom: 5px solid #fd673a;
+  font-family: "Sulphur Point", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact_container::after {
+  content: "{:}";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #83c6dd;
+  filter: drop-shadow(inset 0px 3px 3px #fff);
+  font-size: 35vmax;
+  opacity: 0.07;
+  z-index: -1;
+}
+
+.contact_container::before {
+  content: "{:}";
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  color: #fd673a;
+  filter: drop-shadow(inset 0px 3px 3px #fff);
+  font-size: 35vmax;
+  opacity: 0.07;
+  z-index: -1;
+}
+
+.contact_left-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 2rem 3rem;
+}
+
+.contact_left-box span {
+  font-size: 4.5rem;
+}
+
+.contact_left-box span:nth-child(1) {
+  color: #83c6dd;
+}
+
+.contact_left-box span:nth-child(2) {
+  color: #fd673a;
+}
+
+.contact_right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+}
+
+.contact_right-box a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.contact_links + .contact_links {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.contact_links {
+  transition: color 250ms ease-in;
+  color: #999;
+}
+
+.contact_links:hover {
+  transition: color 250ms ease-in;
+  color: #fd673a;
+}
+
+.contact_links > span {
+  transition: color 250ms ease-in;
+  color: #999;
+}
+
+.contact_links:hover > span {
+  transition: color 250ms ease-in;
+  color: #83c6dd;
+}
+
+.doge-comment {
+  width: 300px;
+  height: 300px;
+  background: url("../images/profile/doger.png");
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  background-size: cover;
+  animation: vibrate-2 0.9s linear infinite both;
+  filter: drop-shadow(0px 3px 3px #666);
+  transition: background 500ms ease-in-out;
+  z-index: -5;
+  opacity: 0;
+}
+
+.doge-comment:hover {
+  animation: none;
+}
+
+.doge-comment:hover::after {
+  content: "Pssst, just between you and ol' Doggo.... \ANick is paws down the best Javascript\A developer out there!\A. . . . . . . .\AHey, You got any treats??? ";
+  font-family: "Sulphur Point", sans-serif;
+  position: absolute;
+  color: #333;
+  top: -11rem;
+  left: -100%;
+  white-space: pre;
+  background: #fff;
+  padding: 2rem 2.5rem 6rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.15rem;
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
+  animation: tilt-in-fwd-br 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.doge-comment .doge-btn-close {
+  position: absolute;
+  bottom: 0;
+  border-radius: 100%;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  color: #fd673a;
+  font-size: 1.5rem;
+}
+.doge-comment .doge-btn-close:hover {
+  cursor: pointer;
+}
+
+.show-doge {
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+@keyframes tilt-in-fwd-br {
+  0% {
+    -webkit-transform: rotateY(20deg) rotateX(-35deg) translate(300px, 300px)
+      skew(35deg, -10deg);
+    transform: rotateY(20deg) rotateX(-35deg) translate(300px, 300px)
+      skew(35deg, -10deg);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 0.1;
+  }
+  75% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+@keyframes vibrate-2 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  40% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  60% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}

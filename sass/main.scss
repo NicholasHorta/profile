@@ -1,0 +1,196 @@
+@import "./_page-one.scss";
+@import "./_page-two.scss";
+@import "./_page-two-half.scss";
+@import "./_page-three.scss";
+@import "./_page-four.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  background: #333;
+  height: 100%;
+}
+
+.copyright {
+  color: #999;
+  font-family: "Sulphur Point", sans-serif;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fd673a;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #333;
+}
+
+.site_container {
+  position: relative;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow: auto;
+  overflow: hidden;
+}
+.section_content_container {
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+// Media Queries
+
+@media (max-width: 800px) {
+  .about_grid_item_text-one {
+    font-size: 1.25rem;
+  }
+
+  .about_grid_item_text-two {
+    font-size: 1.25rem;
+  }
+
+  .show-doge {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .page-five {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 10vmin;
+    margin-bottom: 10rem;
+    padding: 2rem 0;
+    color: #fd6738;
+    opacity: 0.8;
+    background-color: #80c6dd33;
+    position: relative;
+  }
+
+  .fab:hover::after {
+    animation: none;
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .header_grid_container {
+    width: 100%;
+  }
+
+  .page_one {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page_two {
+    padding-bottom: 7rem;
+  }
+
+  .about_grid_item_text-one {
+    font-size: 1.25rem;
+    grid-column: 1 / 4;
+    line-height: 1.75rem;
+  }
+  .about_grid_item_text-title {
+    position: inherit;
+    display: block;
+    grid-row: 1 / 2;
+  }
+
+  .about_grid_item_text-two {
+    margin-top: 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .projects_grid_container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  .contact_left-box span {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .page_two {
+    padding-bottom: 0rem;
+  }
+
+  .projects_grid_container {
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    padding: 0 1rem;
+  }
+
+  .about_grid_item_text-one {
+    padding: 1rem;
+  }
+
+  .about_grid_item_text-title {
+    padding: 1rem;
+  }
+
+  .about_grid_item_text-two {
+    padding: 1rem;
+  }
+
+  .page_three {
+    margin: 0 auto;
+    padding: 2rem 0rem 0rem;
+    background: #333;
+    position: relative;
+  }
+
+  .grid_item_text {
+    width: 100%;
+  }
+
+  .projects_title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .projects_title_text-one {
+    padding-left: 1rem;
+  }
+  .projects_title_text-two {
+    padding-right: 1rem;
+  }
+
+  .contact_container {
+    flex-direction: column;
+    margin-bottom: 5rem;
+    border-bottom: 0px;
+  }
+
+  .contact_left-box {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .contact_left-box span {
+    font-size: 4rem;
+  }
+
+  .contact_right-box {
+    padding: 0 1rem;
+  }
+}
