@@ -25,7 +25,7 @@
 :root {
   --inner-block-space: 2rem;
   --border-color: #eee;
-  --stand-out: #2e76ec;
+  --stand-out: #1a79f5;
 }
 
 *,
@@ -38,8 +38,8 @@
 
 html,
 body {
-  background-color: #fff;
   font-family: "main", monospace, "Courier New", Courier;
+
 }
 
 h2 {
@@ -47,11 +47,18 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+.main-inner-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .profile__header-container {
   padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   line-height: 5rem;
+  margin-top: 5rem;
 }
 
 .profile__header-container .header-container__header-one,
@@ -75,15 +82,31 @@ h2 {
   background-color: var(--border-color);
 }
 
+.content-stack__stack-b {
+  text-align: end;
+}
+
+.square {
+  position: absolute;
+  padding: 10rem;
+  left: 2rem;
+  right: 0rem;
+  z-index: -1;
+  border: 0.25rem #1f777f solid;
+  transform: rotate(20deg);
+  max-width: 5rem;
+  margin: 0 auto;
+  opacity: 0.05;
+
+}
+
 
 .profile__alt-container,
 .profile__content-container,
 .profile__final-container {
     padding: var(--inner-block-space);
 }
-.profile__content-container {
-  max-width: 60%;
-}
+
 .profile__final-container {
   padding-bottom: 5rem;
   padding-top: 0rem;
@@ -98,10 +121,6 @@ h2 {
   display: inline;
 }
 
-.content-container__content-about {
-  border-right: 2px solid var(--border-color);
-}
-
 .content-container__content-works {
   display: flex;
   flex-direction: column;
@@ -114,12 +133,13 @@ h2 {
   letter-spacing: 0.15rem;
   display: flex;
   gap: 3rem;
+  justify-content: space-between;
 }
 
 .content-about__text-content {
   font-size: 1.05rem;
   padding: 0.5rem 0;
-  padding-right: 2rem;
+  padding-right: 1rem;
   font-family: "main";
   letter-spacing: 0.05rem;
   line-height: 1.5rem;
@@ -164,7 +184,7 @@ h2 {
 }
 
 .content-works__link:hover {
-  color: var(--stand-out);
+  color: var(--stand-out) !important;
   text-decoration: underline;
 }
 
@@ -175,7 +195,13 @@ h2 {
 }
 
 .text-content__stand-out {
-  color: var(--stand-out);
+  color: var(--stand-out) !important;
+  font-size: 1.15rem;
+
+}
+
+.company {
+  text-decoration: none;
 }
 
 .stack-a__col h2:nth-child(2) {
